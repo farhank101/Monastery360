@@ -1,739 +1,758 @@
 /* Global Styles */
 :root {
-    --primary-color: #8B4513;
-    --secondary-color: #D2691E;
-    --accent-color: #FFD700;
-    --text-dark: #333333;
-    --text-light: #666666;
-    --bg-light: #F5F5F5;
-    --white: #FFFFFF;
-    --shadow: 0 2px 10px rgba(0,0,0,0.1);
-    --shadow-hover: 0 5px 20px rgba(0,0,0,0.15);
+  --primary-color: #8b4513;
+  --secondary-color: #d2691e;
+  --accent-color: #ffd700;
+  --text-dark: #333333;
+  --text-light: #666666;
+  --bg-light: #f5f5f5;
+  --white: #ffffff;
+  --shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  --shadow-hover: 0 5px 20px rgba(0, 0, 0, 0.15);
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
-    color: var(--text-dark);
-    background-color: var(--bg-light);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: var(--text-dark);
+  background-color: var(--bg-light);
 }
 
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 /* Navigation */
 .navbar {
-    background: var(--white);
-    box-shadow: var(--shadow);
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
+  background: var(--white);
+  box-shadow: var(--shadow);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
 }
 
 .nav-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 1rem 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .nav-brand {
-    display: flex;
-    align-items: center;
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: var(--primary-color);
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--primary-color);
 }
 
 .nav-brand i {
-    margin-right: 10px;
-    animation: spin 10s linear infinite;
+  margin-right: 10px;
+  animation: spin 10s linear infinite;
 }
 
 @keyframes spin {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .nav-menu {
-    display: flex;
-    list-style: none;
-    gap: 2rem;
+  display: flex;
+  list-style: none;
+  gap: 2rem;
 }
 
 .nav-link {
-    text-decoration: none;
-    color: var(--text-dark);
-    transition: color 0.3s;
+  text-decoration: none;
+  color: var(--text-dark);
+  transition: color 0.3s;
 }
 
-.nav-link:hover, .nav-link.active {
-    color: var(--primary-color);
+.nav-link:hover,
+.nav-link.active {
+  color: var(--primary-color);
 }
 
 .nav-toggle {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
 }
 
 .bar {
-    width: 25px;
-    height: 3px;
-    background: var(--primary-color);
-    margin: 3px 0;
-    transition: 0.3s;
+  width: 25px;
+  height: 3px;
+  background: var(--primary-color);
+  margin: 3px 0;
+  transition: 0.3s;
 }
 
 /* Hero Section */
 .hero {
-    margin-top: 70px;
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    color: white;
-    padding: 4rem 0;
-    text-align: center;
+  margin-top: 70px;
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  color: white;
+  padding: 4rem 0;
+  text-align: center;
 }
 
 .hero-title {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-    animation: fadeInUp 1s ease;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  animation: fadeInUp 1s ease;
 }
 
 .hero-subtitle {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-    opacity: 0.95;
-    animation: fadeInUp 1s ease 0.2s both;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  opacity: 0.95;
+  animation: fadeInUp 1s ease 0.2s both;
 }
 
 @keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .hero-buttons {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    margin-bottom: 3rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 3rem;
 }
 
 .btn {
-    padding: 12px 30px;
-    border: none;
-    border-radius: 25px;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: all 0.3s;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.3s;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .btn-primary {
-    background: var(--accent-color);
-    color: var(--text-dark);
+  background: var(--accent-color);
+  color: var(--text-dark);
 }
 
 .btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
 }
 
 .btn-secondary {
-    background: transparent;
-    color: white;
-    border: 2px solid white;
+  background: transparent;
+  color: white;
+  border: 2px solid white;
 }
 
 .btn-secondary:hover {
-    background: white;
-    color: var(--primary-color);
+  background: white;
+  color: var(--primary-color);
 }
 
 /* Hero Stats */
 .hero-stats {
-    display: flex;
-    justify-content: center;
-    gap: 4rem;
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
 }
 
 .stat-item {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .stat-number {
-    font-size: 2.5rem;
-    font-weight: bold;
+  font-size: 2.5rem;
+  font-weight: bold;
 }
 
 .stat-label {
-    font-size: 0.9rem;
-    opacity: 0.9;
+  font-size: 0.9rem;
+  opacity: 0.9;
 }
 
 /* Search Section */
 .search-section {
-    background: white;
-    padding: 2rem 0;
-    box-shadow: var(--shadow);
+  background: white;
+  padding: 2rem 0;
+  box-shadow: var(--shadow);
 }
 
 .search-box {
-    display: flex;
-    max-width: 600px;
-    margin: 0 auto 1.5rem;
+  display: flex;
+  max-width: 600px;
+  margin: 0 auto 1.5rem;
 }
 
 #searchInput {
-    flex: 1;
-    padding: 12px 20px;
-    border: 2px solid #e0e0e0;
-    border-radius: 25px 0 0 25px;
-    font-size: 1rem;
-    outline: none;
+  flex: 1;
+  padding: 12px 20px;
+  border: 2px solid #e0e0e0;
+  border-radius: 25px 0 0 25px;
+  font-size: 1rem;
+  outline: none;
 }
 
 #searchInput:focus {
-    border-color: var(--primary-color);
+  border-color: var(--primary-color);
 }
 
 .search-btn {
-    padding: 12px 25px;
-    background: var(--primary-color);
-    color: white;
-    border: none;
-    border-radius: 0 25px 25px 0;
-    cursor: pointer;
-    transition: background 0.3s;
+  padding: 12px 25px;
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 0 25px 25px 0;
+  cursor: pointer;
+  transition: background 0.3s;
 }
 
 .search-btn:hover {
-    background: var(--secondary-color);
+  background: var(--secondary-color);
 }
 
 /* Filter Chips */
 .filter-chips {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
 .chip {
-    padding: 8px 20px;
-    background: var(--bg-light);
-    border-radius: 20px;
-    cursor: pointer;
-    transition: all 0.3s;
+  padding: 8px 20px;
+  background: var(--bg-light);
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s;
 }
 
-.chip:hover, .chip.active {
-    background: var(--primary-color);
-    color: white;
+.chip:hover,
+.chip.active {
+  background: var(--primary-color);
+  color: white;
 }
 
 /* Section Titles */
 .section-title {
-    font-size: 2.5rem;
-    text-align: center;
-    margin-bottom: 3rem;
-    color: var(--primary-color);
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: var(--primary-color);
 }
 
 /* Monasteries Grid */
 .monasteries-section {
-    padding: 4rem 0;
+  padding: 4rem 0;
 }
 
 .monasteries-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-    gap: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 2rem;
 }
 
 .monastery-card {
-    background: white;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: var(--shadow);
-    transition: all 0.3s;
-    cursor: pointer;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: all 0.3s;
+  cursor: pointer;
 }
 
 .monastery-card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-hover);
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-hover);
 }
 
 .monastery-image {
-    width: 100%;
-    height: 200px;
-    background: linear-gradient(45deg, #ddd, #bbb);
-    position: relative;
-    overflow: hidden;
+  width: 100%;
+  height: 200px;
+  background: linear-gradient(45deg, #ddd, #bbb);
+  position: relative;
+  overflow: hidden;
 }
 
 .monastery-badge {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background: var(--accent-color);
-    padding: 5px 10px;
-    border-radius: 15px;
-    font-size: 0.8rem;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: var(--accent-color);
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-size: 0.8rem;
 }
 
 .monastery-info {
-    padding: 1.5rem;
+  padding: 1.5rem;
 }
 
 .monastery-name {
-    font-size: 1.3rem;
-    margin-bottom: 0.5rem;
-    color: var(--primary-color);
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  color: var(--primary-color);
 }
 
 .monastery-location {
-    color: var(--text-light);
-    font-size: 0.9rem;
-    margin-bottom: 1rem;
+  color: var(--text-light);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
 }
 
 .monastery-description {
-    color: var(--text-dark);
-    line-height: 1.5;
-    margin-bottom: 1rem;
+  color: var(--text-dark);
+  line-height: 1.5;
+  margin-bottom: 1rem;
 }
 
 .monastery-features {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
 .feature-tag {
-    padding: 5px 10px;
-    background: var(--bg-light);
-    border-radius: 15px;
-    font-size: 0.85rem;
+  padding: 5px 10px;
+  background: var(--bg-light);
+  border-radius: 15px;
+  font-size: 0.85rem;
 }
 
 /* Map Section */
 .map-section {
-    padding: 4rem 0;
-    background: white;
+  padding: 4rem 0;
+  background: white;
 }
 
 .map-container {
-    position: relative;
+  position: relative;
 }
 
 #leafletMap {
-    height: 500px;
-    border-radius: 10px;
-    box-shadow: var(--shadow);
+  height: 500px;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
 }
 
 .map-controls {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    z-index: 500;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 500;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .map-btn {
-    padding: 10px 15px;
-    background: white;
-    border: none;
-    border-radius: 5px;
-    box-shadow: var(--shadow);
-    cursor: pointer;
-    transition: all 0.3s;
+  padding: 10px 15px;
+  background: white;
+  border: none;
+  border-radius: 5px;
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  transition: all 0.3s;
 }
 
 .map-btn:hover {
-    background: var(--primary-color);
-    color: white;
+  background: var(--primary-color);
+  color: white;
 }
 
 /* Events Section */
 .events-section {
-    padding: 4rem 0;
+  padding: 4rem 0;
 }
 
 .events-filter {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
 }
 
 .filter-btn {
-    padding: 10px 25px;
-    background: white;
-    border: 2px solid var(--primary-color);
-    border-radius: 25px;
-    color: var(--primary-color);
-    cursor: pointer;
-    transition: all 0.3s;
+  padding: 10px 25px;
+  background: white;
+  border: 2px solid var(--primary-color);
+  border-radius: 25px;
+  color: var(--primary-color);
+  cursor: pointer;
+  transition: all 0.3s;
 }
 
-.filter-btn:hover, .filter-btn.active {
-    background: var(--primary-color);
-    color: white;
+.filter-btn:hover,
+.filter-btn.active {
+  background: var(--primary-color);
+  color: white;
 }
 
 .events-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
 }
 
 .event-card {
-    background: white;
-    border-radius: 10px;
-    padding: 1.5rem;
-    box-shadow: var(--shadow);
-    transition: all 0.3s;
-    border-left: 4px solid var(--accent-color);
+  background: white;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+  transition: all 0.3s;
+  border-left: 4px solid var(--accent-color);
 }
 
 .event-card:hover {
-    transform: translateX(5px);
-    box-shadow: var(--shadow-hover);
+  transform: translateX(5px);
+  box-shadow: var(--shadow-hover);
 }
 
 .event-date {
-    color: var(--primary-color);
-    font-weight: bold;
-    margin-bottom: 0.5rem;
+  color: var(--primary-color);
+  font-weight: bold;
+  margin-bottom: 0.5rem;
 }
 
 .event-name {
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
 }
 
 .event-monastery {
-    color: var(--text-light);
-    font-size: 0.9rem;
-    margin-bottom: 1rem;
+  color: var(--text-light);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
 }
 
 .event-description {
-    line-height: 1.5;
-    margin-bottom: 1rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
 }
 
 .event-register {
-    display: inline-block;
-    padding: 8px 20px;
-    background: var(--primary-color);
-    color: white;
-    text-decoration: none;
-    border-radius: 20px;
-    transition: background 0.3s;
+  display: inline-block;
+  padding: 8px 20px;
+  background: var(--primary-color);
+  color: white;
+  text-decoration: none;
+  border-radius: 20px;
+  transition: background 0.3s;
 }
 
 .event-register:hover {
-    background: var(--secondary-color);
+  background: var(--secondary-color);
 }
 
 /* Tours Section */
 .tours-section {
-    padding: 4rem 0;
-    background: white;
+  padding: 4rem 0;
+  background: white;
 }
 
 .tour-notice {
-    background: linear-gradient(135deg, var(--bg-light), white);
-    padding: 1.5rem;
-    border-radius: 10px;
-    margin-bottom: 2rem;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
+  background: linear-gradient(135deg, var(--bg-light), white);
+  padding: 1.5rem;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
 .tour-notice i {
-    font-size: 2rem;
-    color: var(--primary-color);
+  font-size: 2rem;
+  color: var(--primary-color);
 }
 
 .tours-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-    gap: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 2rem;
 }
 
 .tour-card {
-    background: white;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: var(--shadow);
-    position: relative;
-    transition: all 0.3s;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  position: relative;
+  transition: all 0.3s;
 }
 
 .tour-card:hover {
-    transform: scale(1.02);
-    box-shadow: var(--shadow-hover);
+  transform: scale(1.02);
+  box-shadow: var(--shadow-hover);
 }
 
 .tour-preview {
-    height: 200px;
-    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 3rem;
+  height: 200px;
+  background: linear-gradient(
+    45deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 3rem;
 }
 
 .tour-info {
-    padding: 1.5rem;
+  padding: 1.5rem;
 }
 
 .tour-title {
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
-    color: var(--primary-color);
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: var(--primary-color);
 }
 
 .tour-features {
-    list-style: none;
-    margin-bottom: 1rem;
+  list-style: none;
+  margin-bottom: 1rem;
 }
 
 .tour-features li {
-    padding: 5px 0;
-    color: var(--text-light);
+  padding: 5px 0;
+  color: var(--text-light);
 }
 
 .tour-features li:before {
-    content: "✓ ";
-    color: var(--accent-color);
-    font-weight: bold;
+  content: "✓ ";
+  color: var(--accent-color);
+  font-weight: bold;
 }
 
 .tour-btn {
-    display: inline-block;
-    padding: 10px 25px;
-    background: var(--primary-color);
-    color: white;
-    text-decoration: none;
-    border-radius: 25px;
-    transition: all 0.3s;
+  display: inline-block;
+  padding: 10px 25px;
+  background: var(--primary-color);
+  color: white;
+  text-decoration: none;
+  border-radius: 25px;
+  transition: all 0.3s;
 }
 
 .tour-btn:hover {
-    background: var(--secondary-color);
-    transform: translateY(-2px);
+  background: var(--secondary-color);
+  transform: translateY(-2px);
 }
 
 /* Modal */
 .modal {
-    display: none;
-    position: fixed;
-    z-index: 2000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.6);
-    animation: fadeIn 0.3s;
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  animation: fadeIn 0.3s;
 }
 
 .modal.show {
-    display: block;
+  display: block;
 }
 
 .modal-content {
-    background-color: white;
-    margin: 5% auto;
-    padding: 0;
-    border-radius: 10px;
-    width: 80%;
-    max-width: 800px;
-    box-shadow: 0 5px 30px rgba(0,0,0,0.3);
-    animation: slideDown 0.3s;
+  background-color: white;
+  margin: 5% auto;
+  padding: 0;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 800px;
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+  animation: slideDown 0.3s;
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes slideDown {
-    from {
-        opacity: 0;
-        transform: translateY(-50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .modal-close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-    padding: 10px 20px;
-    cursor: pointer;
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  padding: 10px 20px;
+  cursor: pointer;
 }
 
 .modal-close:hover {
-    color: var(--primary-color);
+  color: var(--primary-color);
 }
 
 #modalBody {
-    padding: 2rem;
+  padding: 2rem;
 }
 
 /* Footer */
 .footer {
-    background: var(--primary-color);
-    color: white;
-    padding: 3rem 0 1rem;
-    margin-top: 4rem;
+  background: var(--primary-color);
+  color: white;
+  padding: 3rem 0 1rem;
+  margin-top: 4rem;
 }
 
 .footer-content {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    margin-bottom: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
 }
 
 .footer-section h3 {
-    margin-bottom: 1rem;
+  margin-bottom: 1rem;
 }
 
 .footer-section ul {
-    list-style: none;
+  list-style: none;
 }
 
 .footer-section ul li {
-    padding: 5px 0;
+  padding: 5px 0;
 }
 
 .footer-section a {
-    color: white;
-    text-decoration: none;
-    opacity: 0.9;
-    transition: opacity 0.3s;
+  color: white;
+  text-decoration: none;
+  opacity: 0.9;
+  transition: opacity 0.3s;
 }
 
 .footer-section a:hover {
-    opacity: 1;
+  opacity: 1;
 }
 
 .footer-bottom {
-    text-align: center;
-    padding-top: 2rem;
-    border-top: 1px solid rgba(255,255,255,0.2);
-    opacity: 0.8;
+  text-align: center;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  opacity: 0.8;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .nav-menu {
-        position: fixed;
-        left: -100%;
-        top: 70px;
-        flex-direction: column;
-        background-color: white;
-        width: 100%;
-        text-align: center;
-        transition: 0.3s;
-        box-shadow: var(--shadow);
-        padding: 2rem 0;
-    }
-    
-    .nav-menu.active {
-        left: 0;
-    }
-    
-    .nav-toggle {
-        display: flex;
-    }
-    
-    .hero-title {
-        font-size: 2rem;
-    }
-    
-    .hero-stats {
-        gap: 2rem;
-    }
-    
-    .monasteries-grid,
-    .events-grid,
-    .tours-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    #leafletMap {
-        height: 400px;
-    }
-    
-    .modal-content {
-        width: 95%;
-        margin: 10% auto;
-    }
+  .nav-menu {
+    position: fixed;
+    left: -100%;
+    top: 70px;
+    flex-direction: column;
+    background-color: white;
+    width: 100%;
+    text-align: center;
+    transition: 0.3s;
+    box-shadow: var(--shadow);
+    padding: 2rem 0;
+  }
+
+  .nav-menu.active {
+    left: 0;
+  }
+
+  .nav-toggle {
+    display: flex;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-stats {
+    gap: 2rem;
+  }
+
+  .monasteries-grid,
+  .events-grid,
+  .tours-grid {
+    grid-template-columns: 1fr;
+  }
+
+  #leafletMap {
+    height: 400px;
+  }
+
+  .modal-content {
+    width: 95%;
+    margin: 10% auto;
+  }
 }
 
 /* --- Panorama Viewer Styles --- */
 .panorama-view {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    z-index: 1050;
-    justify-content: center;
-    align-items: center;
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 1050;
+  justify-content: center;
+  align-items: center;
 }
 
 #panorama {
-    width: 90vw;
-    height: 85vh;
+  width: 90vw;
+  height: 85vh;
 }
 
 .panorama-close-btn {
-    position: absolute;
-    top: 20px;
-    right: 35px;
-    font-size: 40px;
-    color: white;
-    background: none;
-    border: none;
-    cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  font-size: 40px;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
 }
