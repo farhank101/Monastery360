@@ -125,7 +125,7 @@ function renderMonasteries(filteredMonasteries = null) {
             })">
                 <img src="${monastery.images[0]}" class="card-img-top" alt="${
         monastery.name
-      }" style="height: 200px; object-fit: cover;">
+      }" style="height: 220px; object-fit: cover;">
                 <div class="card-body d-flex flex-column">
                     <h5 class="card-title text-primary">${monastery.name}</h5>
                     <p class="card-text text-muted small mb-2">
