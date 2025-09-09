@@ -1,0 +1,209 @@
+[
+  {
+    "id": 1,
+    "name": "Rumtek Monastery",
+    "localName": "རུམ་ཐེག་དགོན་པ",
+    "established": "1966",
+    "region": "East Sikkim",
+    "latitude": 27.2871,
+    "longitude": 88.7604,
+    "altitude": "1500m",
+    "description": "The Rumtek Monastery is the largest monastery in Sikkim and serves as the main seat of the Karma Kagyu lineage. It houses some of the world's most unique religious art objects.",
+    "highlights": [
+      "Golden Stupa",
+      "Karma Shri Nalanda Institute",
+      "Traditional Architecture",
+      "Sacred Relics"
+    ],
+    "visitingHours": "9:00 AM - 5:00 PM",
+    "entryFee": "₹10 for Indians, ₹20 for foreigners",
+    "images": [
+      "/images/rumtek-main.jpg",
+      "/images/rumtek-interior.jpg"
+    ],
+    "virtualTourUrl": "/tours/rumtek",
+    "audioGuideAvailable": true,
+    "accessibility": "Wheelchair accessible main areas",
+    "nearbyAttractions": [
+      "Lingdum Monastery",
+      "Gangtok City"
+    ],
+    "contactInfo": {
+      "phone": "+91-3592-252353",
+      "email": "info@rumtek.org"
+    }
+  },
+  {
+    "id": 2,
+    "name": "Pemayangtse Monastery",
+    "localName": "པདྨ་ཡང་རྩེ་དགོན་པ",
+    "established": "1705",
+    "region": "West Sikkim",
+    "latitude": 27.3051,
+    "longitude": 88.2523,
+    "altitude": "2085m",
+    "description": "One of the oldest and most important monasteries in Sikkim, Pemayangtse means 'Perfect Sublime Lotus'. It belongs to the Nyingma sect of Tibetan Buddhism.",
+    "highlights": [
+      "Seven-tiered wooden structure 'Zangdok Palri'",
+      "Ancient manuscripts",
+      "Tantric teachings center",
+      "Panoramic Himalayan views"
+    ],
+    "visitingHours": "9:00 AM - 5:00 PM (Closed 1-2 PM)",
+    "entryFee": "₹20 for Indians, ₹40 for foreigners",
+    "images": [
+      "/images/pemayangtse-main.jpg",
+      "/images/pemayangtse-view.jpg"
+    ],
+    "virtualTourUrl": "/tours/pemayangtse",
+    "audioGuideAvailable": true,
+    "accessibility": "Limited accessibility, steep stairs",
+    "nearbyAttractions": [
+      "Rabdentse Ruins",
+      "Khecheopalri Lake",
+      "Pelling"
+    ],
+    "contactInfo": {
+      "phone": "+91-3595-250756",
+      "email": "contact@pemayangtse.org"
+    }
+  },
+  {
+    "id": 3,
+    "name": "Tashiding Monastery",
+    "localName": "བཀྲ་ཤིས་སྡིངས་དགོན་པ",
+    "established": "1641",
+    "region": "West Sikkim",
+    "latitude": 27.3500,
+    "longitude": 88.2333,
+    "altitude": "1465m",
+    "description": "Tashiding Monastery is considered the most sacred monastery in Sikkim. It is believed that mere sight of the monastery cleanses sins.",
+    "highlights": [
+      "Thongwa Rangdol holy chorten",
+      "Bumchu Festival",
+      "Sacred water vase ceremony",
+      "Heart-shaped sacred stone"
+    ],
+    "visitingHours": "7:00 AM - 6:00 PM",
+    "entryFee": "Free",
+    "images": [
+      "/images/tashiding-main.jpg",
+      "/images/tashiding-chorten.jpg"
+    ],
+    "virtualTourUrl": "/tours/tashiding",
+    "audioGuideAvailable": false,
+    "accessibility": "Difficult access, many stairs",
+    "nearbyAttractions": [
+      "Rathong River",
+      "Yuksom"
+    ],
+    "contactInfo": {
+      "phone": "+91-3595-241235",
+      "email": "tashiding.monastery@gmail.com"
+    }
+  },
+  {
+    "id": 4,
+    "name": "Enchey Monastery",
+    "localName": "ཨིན་ཆེ་དགོན་པ",
+    "established": "1909",
+    "region": "East Sikkim",
+    "latitude": 27.3320,
+    "longitude": 88.6089,
+    "altitude": "1900m",
+    "description": "Located on a hilltop above Gangtok, Enchey Monastery is believed to be a sacred site blessed by Lama Druptob Karpo. It offers spectacular views of Mt. Khangchendzonga.",
+    "highlights": [
+      "Annual Cham dance festival",
+      "Nyingma Buddhist teachings",
+      "Monastery architecture",
+      "Prayer wheels"
+    ],
+    "visitingHours": "9:00 AM - 4:00 PM",
+    "entryFee": "₹10 for Indians, ₹20 for foreigners",
+    "images": [
+      "/images/enchey-main.jpg",
+      "/images/enchey-festival.jpg"
+    ],
+    "virtualTourUrl": "/tours/enchey",
+    "audioGuideAvailable": true,
+    "accessibility": "Moderate accessibility",
+    "nearbyAttractions": [
+      "Ganesh Tok",
+      "Hanuman Tok",
+      "Flower Exhibition Centre"
+    ],
+    "contactInfo": {
+      "phone": "+91-3592-223825",
+      "email": "enchey@sikkimmonasteries.org"
+    }
+  },
+  {
+    "id": 5,
+    "name": "Phodong Monastery",
+    "localName": "ཕོ་གདོང་དགོན་པ",
+    "established": "1740",
+    "region": "North Sikkim",
+    "latitude": 27.4167,
+    "longitude": 88.6000,
+    "altitude": "1400m",
+    "description": "One of the six most important monasteries in Sikkim, Phodong is known for its beautiful murals and ancient frescoes depicting Buddhist teachings.",
+    "highlights": [
+      "9th Karmapa's residence",
+      "Ancient murals and frescoes",
+      "Annual religious festival",
+      "Traditional Tibetan architecture"
+    ],
+    "visitingHours": "9:00 AM - 5:00 PM",
+    "entryFee": "₹20 for Indians, ₹40 for foreigners",
+    "images": [
+      "/images/phodong-main.jpg",
+      "/images/phodong-murals.jpg"
+    ],
+    "virtualTourUrl": "/tours/phodong",
+    "audioGuideAvailable": false,
+    "accessibility": "Limited accessibility",
+    "nearbyAttractions": [
+      "Labrang Monastery",
+      "Seven Sisters Waterfall"
+    ],
+    "contactInfo": {
+      "phone": "+91-3592-237445",
+      "email": "phodong.info@sikkim.gov.in"
+    }
+  },
+  {
+    "id": 6,
+    "name": "Dubdi Monastery",
+    "localName": "འདུབ་སྡེ་དགོན་པ",
+    "established": "1701",
+    "region": "West Sikkim",
+    "latitude": 27.3167,
+    "longitude": 88.2667,
+    "altitude": "2100m",
+    "description": "Also known as Yuksom Monastery, Dubdi is considered the oldest monastery in Sikkim. It's located on a hilltop and requires a short trek through forest paths.",
+    "highlights": [
+      "Oldest monastery in Sikkim",
+      "Historical manuscripts",
+      "Meditation caves",
+      "Forest trek approach"
+    ],
+    "visitingHours": "8:00 AM - 4:00 PM",
+    "entryFee": "Free",
+    "images": [
+      "/images/dubdi-main.jpg",
+      "/images/dubdi-path.jpg"
+    ],
+    "virtualTourUrl": "/tours/dubdi",
+    "audioGuideAvailable": false,
+    "accessibility": "Not accessible - requires trekking",
+    "nearbyAttractions": [
+      "Norbugang Coronation Throne",
+      "Kathok Lake",
+      "Yuksom"
+    ],
+    "contactInfo": {
+      "phone": "+91-3595-241328",
+      "email": "yuksom.tourism@sikkim.gov.in"
+    }
+  }
+]

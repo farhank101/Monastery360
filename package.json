@@ -1,0 +1,21 @@
+{
+  "name": "monastery360-sikkim",
+  "version": "1.0.0",
+  "description": "Digital Heritage Platform for Sikkim's Monasteries",
+  "main": "backend/server.js",
+  "scripts": {
+    "start": "node backend/server.js",
+    "dev": "nodemon backend/server.js"
+  },
+  "keywords": ["sikkim", "monastery", "tourism", "cultural-heritage", "digital-preservation"],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "body-parser": "^1.20.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}

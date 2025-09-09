@@ -1,0 +1,146 @@
+[
+  {
+    "id": 1,
+    "name": "Losar Festival",
+    "type": "Festival",
+    "date": "2025-02-10",
+    "duration": "3 days",
+    "monasteryId": 1,
+    "monasteryName": "Rumtek Monastery",
+    "description": "Tibetan New Year celebration with traditional dances, prayers, and rituals. Monks perform sacred Cham dances wearing colorful masks.",
+    "highlights": [
+      "Traditional Cham Dance",
+      "Prayer ceremonies",
+      "Community feast",
+      "Cultural performances"
+    ],
+    "visitorInfo": "Open to public. Traditional dress encouraged.",
+    "registrationRequired": false
+  },
+  {
+    "id": 2,
+    "name": "Bumchu Festival",
+    "type": "Sacred Ritual",
+    "date": "2025-03-15",
+    "duration": "1 day",
+    "monasteryId": 3,
+    "monasteryName": "Tashiding Monastery",
+    "description": "Sacred water vase opening ceremony. The level of water in the sacred vase is believed to predict the year's fortune for Sikkim.",
+    "highlights": [
+      "Sacred vase opening",
+      "Fortune prediction ritual",
+      "Mass prayers",
+      "Holy water distribution"
+    ],
+    "visitorInfo": "Limited access to main ceremony. Arrive early.",
+    "registrationRequired": true
+  },
+  {
+    "id": 3,
+    "name": "Saga Dawa",
+    "type": "Religious Observance",
+    "date": "2025-05-12",
+    "duration": "1 month",
+    "monasteryId": 2,
+    "monasteryName": "Pemayangtse Monastery",
+    "description": "Holy month commemorating Buddha's birth, enlightenment, and parinirvana. Special prayers and rituals throughout the month.",
+    "highlights": [
+      "Daily prayer sessions",
+      "Butter lamp offerings",
+      "Scripture recitations",
+      "Meditation sessions"
+    ],
+    "visitorInfo": "Daily prayers open to public from 6 AM.",
+    "registrationRequired": false
+  },
+  {
+    "id": 4,
+    "name": "Pang Lhabsol",
+    "type": "State Festival",
+    "date": "2025-08-28",
+    "duration": "1 day",
+    "monasteryId": 1,
+    "monasteryName": "Rumtek Monastery",
+    "description": "Unique Sikkimese festival honoring Mount Khangchendzonga as the guardian deity of Sikkim. Features warrior dances and traditional rituals.",
+    "highlights": [
+      "Pangtoed Cham dance",
+      "Warrior dance performances",
+      "Traditional music",
+      "Offering ceremonies"
+    ],
+    "visitorInfo": "Photography allowed in designated areas only.",
+    "registrationRequired": false
+  },
+  {
+    "id": 5,
+    "name": "Kagyad Dance Festival",
+    "type": "Dance Festival",
+    "date": "2025-12-20",
+    "duration": "2 days",
+    "monasteryId": 4,
+    "monasteryName": "Enchey Monastery",
+    "description": "Annual masked dance festival performed before Losar. Monks perform sacred dances to ward off evil spirits.",
+    "highlights": [
+      "Masked dance performances",
+      "Demon exorcism rituals",
+      "Traditional costumes",
+      "Fire rituals"
+    ],
+    "visitorInfo": "Best viewing from monastery courtyard. Arrive by 9 AM.",
+    "registrationRequired": false
+  },
+  {
+    "id": 6,
+    "name": "Guru Rinpoche Birthday",
+    "type": "Religious Celebration",
+    "date": "2025-07-06",
+    "duration": "1 day",
+    "monasteryId": 5,
+    "monasteryName": "Phodong Monastery",
+    "description": "Celebration of Padmasambhava's birth with special prayers, dances, and teachings.",
+    "highlights": [
+      "Special prayers",
+      "Teaching sessions",
+      "Butter sculpture displays",
+      "Community prayers"
+    ],
+    "visitorInfo": "Traditional offerings welcome. Dress modestly.",
+    "registrationRequired": false
+  },
+  {
+    "id": 7,
+    "name": "Drukpa Tseshi",
+    "type": "Religious Observance",
+    "date": "2025-07-31",
+    "duration": "1 day",
+    "monasteryId": 6,
+    "monasteryName": "Dubdi Monastery",
+    "description": "Commemorates Buddha's first sermon at Sarnath. Special prayers and teachings throughout the day.",
+    "highlights": [
+      "Dawn prayers",
+      "Dharma teachings",
+      "Meditation sessions",
+      "Lamp lighting ceremony"
+    ],
+    "visitorInfo": "Trek starts at 7 AM from Yuksom. Moderate fitness required.",
+    "registrationRequired": true
+  },
+  {
+    "id": 8,
+    "name": "Meditation Retreat",
+    "type": "Retreat Program",
+    "date": "2025-04-01",
+    "duration": "7 days",
+    "monasteryId": 1,
+    "monasteryName": "Rumtek Monastery",
+    "description": "Week-long meditation retreat for beginners and practitioners. Includes teachings, guided meditation, and silent practice.",
+    "highlights": [
+      "Daily meditation sessions",
+      "Buddhist philosophy classes",
+      "One-on-one guidance",
+      "Silent meditation periods"
+    ],
+    "visitorInfo": "Advance booking required. Accommodation available.",
+    "registrationRequired": true
+  }
+]
