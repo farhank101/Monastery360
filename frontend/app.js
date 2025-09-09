@@ -152,6 +152,13 @@ function renderMonasteries(filteredMonasteries = null) {
                               monastery.visitingHours
                             }</span>
                         </div>
+                        ${
+                          monastery.virtualTourUrl
+                            ? `<button class="btn btn-primary mt-3" onclick="launchTour(${monastery.id})">
+                                <i class="fas fa-vr-cardboard"></i> Start Virtual Tour
+                              </button>`
+                            : ""
+                        }
                     </div>
                 </div>
             </div>
@@ -564,4 +571,32 @@ function setup3DViewer() {
     camera.updateProjectionMatrix();
     renderer.setSize(container.clientWidth, container.clientHeight);
   });
+}
+
+// --- VIRTUAL TOUR FUNCTIONS ---
+function launchTour(monasteryId) {
+  const monastery = monasteries.find((m) => m.id === monasteryId);
+  if (!monastery || !monastery.virtualTourUrl) {
+    alert("Virtual tour for this monastery is not available yet.");
+    return;
+  }
+
+  const tourContainer = document.getElementById("panorama-container");
+  if (!tourContainer) {
+    console.error("Panorama container not found in DOM.");
+    return;
+  }
+  tourContainer.style.display = "flex";
+
+  pannellum.viewer("panorama", {
+    type: "equirectangular",
+    panorama: monastery.virtualTourUrl,
+    autoLoad: true,
+    showControls: true,
+  });
+}
+
+function closeTour() {
+  const tourContainer = document.getElementById("panorama-container");
+  if (tourContainer) tourContainer.style.display = "none";
 }

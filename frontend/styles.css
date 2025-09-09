@@ -707,3 +707,33 @@ body {
         margin: 10% auto;
     }
 }
+
+/* --- Panorama Viewer Styles --- */
+.panorama-view {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1050;
+    justify-content: center;
+    align-items: center;
+}
+
+#panorama {
+    width: 90vw;
+    height: 85vh;
+}
+
+.panorama-close-btn {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    font-size: 40px;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
