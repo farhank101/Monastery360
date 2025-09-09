@@ -120,18 +120,35 @@ function renderMonasteries(filteredMonasteries = null) {
     .map(
       (monastery) => `
         <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card h-100 shadow-sm" style="cursor: pointer;" onclick="showMonasteryDetail(${monastery.id})">
-                <img src="${monastery.images[0]}" class="card-img-top" alt="${monastery.name}" style="height: 200px; object-fit: cover;">
+            <div class="card h-100 shadow-sm" style="cursor: pointer;" onclick="showMonasteryDetail(${
+              monastery.id
+            })">
+                <img src="${monastery.images[0]}" class="card-img-top" alt="${
+        monastery.name
+      }" style="height: 200px; object-fit: cover;">
                 <div class="card-body d-flex flex-column">
                     <h5 class="card-title text-primary">${monastery.name}</h5>
                     <p class="card-text text-muted small mb-2">
-                        <i class="fas fa-map-marker-alt me-1"></i> ${monastery.region}
+                        <i class="fas fa-map-marker-alt me-1"></i> ${
+                          monastery.region
+                        }
                     </p>
-                    <p class="card-text flex-grow-1">${monastery.description.substring(0, 100)}...</p>
+                    <p class="card-text flex-grow-1">${monastery.description.substring(
+                      0,
+                      100
+                    )}...</p>
                     <div class="mt-auto">
                         <div class="d-flex flex-wrap gap-2">
-                            ${monastery.virtualTourUrl ? `<span class="badge bg-info"><i class="fas fa-vr-cardboard me-1"></i> Virtual Tour</span>` : ''}
-                            ${monastery.audioGuideAvailable ? `<span class="badge bg-warning text-dark"><i class="fas fa-headphones me-1"></i> Audio Guide</span>` : ''}
+                            ${
+                              monastery.virtualTourUrl
+                                ? `<span class="badge bg-info"><i class="fas fa-vr-cardboard me-1"></i> Virtual Tour</span>`
+                                : ""
+                            }
+                            ${
+                              monastery.audioGuideAvailable
+                                ? `<span class="badge bg-warning text-dark"><i class="fas fa-headphones me-1"></i> Audio Guide</span>`
+                                : ""
+                            }
                         </div>
                     </div>
                 </div>
@@ -227,9 +244,7 @@ function renderVirtualTours() {
                         <li class="mb-1"><i class="fas fa-check text-success me-2"></i>Historical Information</li>
                 </ul>
                     <div class="mt-auto">
-                        <a href="#" class="btn btn-primary w-100" onclick="startVirtualTour(${
-                          monastery.id
-                        }); return false;">
+                        <a href="#" class="btn btn-primary w-100" onclick="launchTour(${monastery.id}); return false;">
                             <i class="fas fa-vr-cardboard me-2"></i> Start Tour
                 </a>
                     </div>
@@ -407,7 +422,7 @@ function showMonasteryDetail(monasteryId) {
           monastery.virtualTourUrl
             ? `
             <div class="text-center mt-4">
-                <button class="btn btn-primary btn-lg" onclick="startVirtualTour(${monastery.id})">
+                <button class="btn btn-primary btn-lg" onclick="launchTour(${monastery.id})">
                     <i class="fas fa-vr-cardboard me-2"></i> Start Virtual Tour
             </button>
             </div>
@@ -427,14 +442,6 @@ function closeModal() {
   if (modal) {
     modal.hide();
   }
-}
-
-// Start virtual tour
-function startVirtualTour(monasteryId) {
-  const monastery = monasteries.find((m) => m.id === monasteryId);
-  alert(
-    `Virtual tour for ${monastery.name} would open here.\n\nIn a full implementation, this would launch an immersive 360° tour experience with:\n- Panoramic views\n- Interactive hotspots\n- Audio narration\n- Historical information`
-  );
 }
 
 // Reset map view
@@ -547,29 +554,6 @@ function setup3DViewer() {
   });
 }
 
-// --- VIRTUAL TOUR FUNCTIONS ---
-function launchTour(monasteryId) {
-  const monastery = monasteries.find((m) => m.id === monasteryId);
-  if (!monastery || !monastery.virtualTourUrl || monastery.virtualTourUrl.startsWith('/')) {
-    alert("Virtual tour for this monastery is not available yet.");
-    return;
-  }
-
-  const tourContainer = document.getElementById("panorama-container");
-  tourContainer.style.display = "flex";
-
-  pannellum.viewer("panorama", {
-    type: "equirectangular",
-    panorama: monastery.virtualTourUrl,
-    autoLoad: true,
-    showControls: true,
-  });
-}
-
-function closeTour() {
-  const tourContainer = document.getElementById("panorama-container");
-  if (tourContainer) tourContainer.style.display = "none";
-}
 // --- VIRTUAL TOUR FUNCTIONS ---
 function launchTour(monasteryId) {
   const monastery = monasteries.find((m) => m.id === monasteryId);
