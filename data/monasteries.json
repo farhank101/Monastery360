@@ -17,17 +17,11 @@
     ],
     "visitingHours": "9:00 AM - 5:00 PM",
     "entryFee": "₹10 for Indians, ₹20 for foreigners",
-    "images": [
-    "/images/rumtek-main.jpg",
-      "/images/rumtek-interior.jpg"
-    ],
-    "virtualTourUrl": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.alamy.com%2F360-degree-panoramic-view-of-lviv-ukraine-august-2019-full-spherical-seamless-hdri-panorama-360-degrees-inside-interior-of-old-church-and-onuphrius-monastery-in-equirectangula-image270287500.html&psig=AOvVaw1WKnZ1mKWUCSXztcbIJ_V9&ust=1757493694880000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCMD-5biky48DFQAAAAAdAAAAABAE",
+    "images": ["/images/rumtek-main.jpg", "/images/rumtek-interior.jpg"],
+    "virtualTourUrl": "/images/rumtek-main.jpg",
     "audioGuideAvailable": true,
     "accessibility": "Wheelchair accessible main areas",
-    "nearbyAttractions": [
-      "Lingdum Monastery",
-      "Gangtok City"
-    ],
+    "nearbyAttractions": ["Lingdum Monastery", "Gangtok City"],
     "contactInfo": {
       "phone": "+91-3592-252353",
       "email": "info@rumtek.org"
@@ -51,18 +45,11 @@
     ],
     "visitingHours": "9:00 AM - 5:00 PM (Closed 1-2 PM)",
     "entryFee": "₹20 for Indians, ₹40 for foreigners",
-    "images": [
-      "/images/pemayangtse-main.jpg",
-      "/images/pemayangtse-view.jpg"
-    ],
+    "images": ["/images/pemayangtse-main.jpg", "/images/pemayangtse-view.jpg"],
     "virtualTourUrl": "/tours/pemayangtse",
     "audioGuideAvailable": true,
     "accessibility": "Limited accessibility, steep stairs",
-    "nearbyAttractions": [
-      "Rabdentse Ruins",
-      "Khecheopalri Lake",
-      "Pelling"
-    ],
+    "nearbyAttractions": ["Rabdentse Ruins", "Khecheopalri Lake", "Pelling"],
     "contactInfo": {
       "phone": "+91-3595-250756",
       "email": "contact@pemayangtse.org"
@@ -74,7 +61,7 @@
     "localName": "བཀྲ་ཤིས་སྡིངས་དགོན་པ",
     "established": "1641",
     "region": "West Sikkim",
-    "latitude": 27.3500,
+    "latitude": 27.35,
     "longitude": 88.2333,
     "altitude": "1465m",
     "description": "Tashiding Monastery is considered the most sacred monastery in Sikkim. It is believed that mere sight of the monastery cleanses sins.",
@@ -86,17 +73,11 @@
     ],
     "visitingHours": "7:00 AM - 6:00 PM",
     "entryFee": "Free",
-    "images": [
-      "/images/tashiding-main.jpg",
-      "/images/tashiding-chorten.jpg"
-    ],
+    "images": ["/images/tashiding-main.jpg", "/images/tashiding-chorten.jpg"],
     "virtualTourUrl": "/tours/tashiding",
     "audioGuideAvailable": false,
     "accessibility": "Difficult access, many stairs",
-    "nearbyAttractions": [
-      "Rathong River",
-      "Yuksom"
-    ],
+    "nearbyAttractions": ["Rathong River", "Yuksom"],
     "contactInfo": {
       "phone": "+91-3595-241235",
       "email": "tashiding.monastery@gmail.com"
@@ -108,7 +89,7 @@
     "localName": "ཨིན་ཆེ་དགོན་པ",
     "established": "1909",
     "region": "East Sikkim",
-    "latitude": 27.3320,
+    "latitude": 27.332,
     "longitude": 88.6089,
     "altitude": "1900m",
     "description": "Located on a hilltop above Gangtok, Enchey Monastery is believed to be a sacred site blessed by Lama Druptob Karpo. It offers spectacular views of Mt. Khangchendzonga.",
@@ -120,10 +101,7 @@
     ],
     "visitingHours": "9:00 AM - 4:00 PM",
     "entryFee": "₹10 for Indians, ₹20 for foreigners",
-    "images": [
-      "/images/enchey-main.jpg",
-      "/images/enchey-festival.jpg"
-    ],
+    "images": ["/images/enchey-main.jpg", "/images/enchey-festival.jpg"],
     "virtualTourUrl": "/tours/enchey",
     "audioGuideAvailable": true,
     "accessibility": "Moderate accessibility",
@@ -144,7 +122,7 @@
     "established": "1740",
     "region": "North Sikkim",
     "latitude": 27.4167,
-    "longitude": 88.6000,
+    "longitude": 88.6,
     "altitude": "1400m",
     "description": "One of the six most important monasteries in Sikkim, Phodong is known for its beautiful murals and ancient frescoes depicting Buddhist teachings.",
     "highlights": [
@@ -155,17 +133,11 @@
     ],
     "visitingHours": "9:00 AM - 5:00 PM",
     "entryFee": "₹20 for Indians, ₹40 for foreigners",
-    "images": [
-      "/images/phodong-main.jpg",
-      "/images/phodong-murals.jpg"
-    ],
+    "images": ["/images/phodong-main.jpg", "/images/phodong-murals.jpg"],
     "virtualTourUrl": "/tours/phodong",
     "audioGuideAvailable": false,
     "accessibility": "Limited accessibility",
-    "nearbyAttractions": [
-      "Labrang Monastery",
-      "Seven Sisters Waterfall"
-    ],
+    "nearbyAttractions": ["Labrang Monastery", "Seven Sisters Waterfall"],
     "contactInfo": {
       "phone": "+91-3592-237445",
       "email": "phodong.info@sikkim.gov.in"
@@ -189,10 +161,7 @@
     ],
     "visitingHours": "8:00 AM - 4:00 PM",
     "entryFee": "Free",
-    "images": [
-      "/images/dubdi-main.jpg",
-      "/images/dubdi-path.jpg"
-    ],
+    "images": ["/images/dubdi-main.jpg", "/images/dubdi-path.jpg"],
     "virtualTourUrl": "/tours/dubdi",
     "audioGuideAvailable": false,
     "accessibility": "Not accessible - requires trekking",
