@@ -18,7 +18,7 @@
     "visitingHours": "9:00 AM - 5:00 PM",
     "entryFee": "₹10 for Indians, ₹20 for foreigners",
     "images": ["/images/rumtek-main.jpg", "/images/rumtek-interior.jpg"],
-    "virtualTourUrl": "/images/rumtek-main.jpg",
+    "virtualTourUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a4/Inside_Thiksey_Monastery_View_2.jpg",
     "audioGuideAvailable": true,
     "accessibility": "Wheelchair accessible main areas",
     "nearbyAttractions": ["Lingdum Monastery", "Gangtok City"],

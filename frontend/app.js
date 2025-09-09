@@ -129,7 +129,13 @@ function renderMonasteries(filteredMonasteries = null) {
                         ? '<span class="badge bg-warning position-absolute top-0 end-0 m-2">Audio Guide</span>'
                         : ""
                     }
-                    <img src="${monastery.images && monastery.images[0] ? monastery.images[0] : ''}" alt="${monastery.name}" style="width: 100%; height: 100%; object-fit: cover;" />
+                    <img src="${
+                      monastery.images && monastery.images[0]
+                        ? monastery.images[0]
+                        : ""
+                    }" alt="${
+        monastery.name
+      }" style="width: 100%; height: 100%; object-fit: cover;" />
             </div>
                 <div class="card-body d-flex flex-column">
                     <h5 class="card-title text-primary">${monastery.name}</h5>
@@ -573,6 +579,29 @@ function setup3DViewer() {
   });
 }
 
+// --- VIRTUAL TOUR FUNCTIONS ---
+function launchTour(monasteryId) {
+  const monastery = monasteries.find((m) => m.id === monasteryId);
+  if (!monastery || !monastery.virtualTourUrl || monastery.virtualTourUrl.startsWith('/')) {
+    alert("Virtual tour for this monastery is not available yet.");
+    return;
+  }
+
+  const tourContainer = document.getElementById("panorama-container");
+  tourContainer.style.display = "flex";
+
+  pannellum.viewer("panorama", {
+    type: "equirectangular",
+    panorama: monastery.virtualTourUrl,
+    autoLoad: true,
+    showControls: true,
+  });
+}
+
+function closeTour() {
+  const tourContainer = document.getElementById("panorama-container");
+  if (tourContainer) tourContainer.style.display = "none";
+}
 // --- VIRTUAL TOUR FUNCTIONS ---
 function launchTour(monasteryId) {
   const monastery = monasteries.find((m) => m.id === monasteryId);
