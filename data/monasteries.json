@@ -73,7 +73,7 @@
     ],
     "visitingHours": "7:00 AM - 6:00 PM",
     "entryFee": "Free",
-    "images": ["/images/tashiding-main.jpg", "/images/tashiding-chorten.jpg"],
+    "images": ["/images/tashiding-main.jpeg", "/images/tashiding-chorten.jpg"],
     "virtualTourUrl": "/tours/tashiding",
     "audioGuideAvailable": false,
     "accessibility": "Difficult access, many stairs",

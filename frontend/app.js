@@ -697,4 +697,51 @@ async function initMap() {
     position,
     title: "Rumtek Monastery",
   });
+
+  // --- Add interactive Points of Interest on the 3D map ---
+  addMonasteryPoiMarkers(map, AdvancedMarkerElement);
+}
+
+// Add Points of Interest markers (with info windows) to the 3D map
+function addMonasteryPoiMarkers(map, AdvancedMarkerElement) {
+  const pois = [
+    {
+      name: "Golden Stupa",
+      position: { lat: 27.28745, lng: 88.76085 },
+      description: "Sacred stupa housing revered relics and prayer offerings.",
+    },
+    {
+      name: "Main Prayer Hall",
+      position: { lat: 27.28715, lng: 88.7602 },
+      description:
+        "Central hall for daily prayers, chants, and special rituals.",
+    },
+    {
+      name: "Karma Shri Nalanda Institute",
+      position: { lat: 27.28685, lng: 88.7611 },
+      description:
+        "Monastic university for Buddhist philosophy and scholarship.",
+    },
+  ];
+
+  const infoWindow = new google.maps.InfoWindow();
+
+  pois.forEach((poi) => {
+    const marker = new AdvancedMarkerElement({
+      map,
+      position: poi.position,
+      title: poi.name,
+    });
+
+    marker.addListener("gmp-click", () => {
+      const content = `
+        <div style="min-width:200px;">
+          <div style="font-weight:600; margin-bottom:4px;">${poi.name}</div>
+          <div style="font-size:12px; color:#444;">${poi.description}</div>
+        </div>`;
+      infoWindow.setContent(content);
+      infoWindow.setPosition(poi.position);
+      infoWindow.open({ map });
+    });
+  });
 }
