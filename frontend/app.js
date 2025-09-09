@@ -244,7 +244,9 @@ function renderVirtualTours() {
                         <li class="mb-1"><i class="fas fa-check text-success me-2"></i>Historical Information</li>
                 </ul>
                     <div class="mt-auto">
-                        <a href="#" class="btn btn-primary w-100" onclick="launchTour(${monastery.id}); return false;">
+                        <a href="#" class="btn btn-primary w-100" onclick="launchTour(${
+                          monastery.id
+                        }); return false;">
                             <i class="fas fa-vr-cardboard me-2"></i> Start Tour
                 </a>
                     </div>
@@ -580,4 +582,27 @@ function launchTour(monasteryId) {
 function closeTour() {
   const tourContainer = document.getElementById("panorama-container");
   if (tourContainer) tourContainer.style.display = "none";
+}
+
+// --- Google Maps 3D Viewer ---
+async function initMap() {
+  const { Map } = await google.maps.importLibrary("maps");
+  const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
+
+  const position = { lat: 27.2871, lng: 88.7604 }; // Rumtek Monastery
+
+  const map = new Map(document.getElementById("map-3d-container"), {
+    center: position,
+    zoom: 17,
+    tilt: 65,
+    heading: 90,
+    mapId: "YOUR_MAP_ID_HERE",
+    mapTypeId: "satellite",
+  });
+
+  new AdvancedMarkerElement({
+    map,
+    position,
+    title: "Rumtek Monastery",
+  });
 }
