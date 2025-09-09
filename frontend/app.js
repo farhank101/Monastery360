@@ -129,6 +129,7 @@ function renderMonasteries(filteredMonasteries = null) {
                         ? '<span class="badge bg-warning position-absolute top-0 end-0 m-2">Audio Guide</span>'
                         : ""
                     }
+                    <img src="${monastery.images && monastery.images[0] ? monastery.images[0] : ''}" alt="${monastery.name}" style="width: 100%; height: 100%; object-fit: cover;" />
             </div>
                 <div class="card-body d-flex flex-column">
                     <h5 class="card-title text-primary">${monastery.name}</h5>
