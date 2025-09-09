@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   renderMonasteries();
   renderEvents();
   renderVirtualTours();
-  setup3DViewer(); // <-- ADD THIS LINE
+  setup3DViewer(); // restore legacy viewer
 });
 
 // Setup event listeners
@@ -476,16 +476,14 @@ function formatDate(dateString) {
 
 // Bootstrap handles modal closing automatically, so this is no longer needed
 
-// --- 3D MODEL VIEWER ---
+// --- 3D MODEL VIEWER --- (restored)
 function setup3DViewer() {
   const container = document.getElementById("3d-viewer-container");
   if (!container) return;
 
-  // 1. Scene: The virtual world
   const scene = new THREE.Scene();
-  scene.background = new THREE.Color(0xf0f0f0); // A light grey background
+  scene.background = new THREE.Color(0xf0f0f0);
 
-  // 2. Camera: Our viewpoint
   const camera = new THREE.PerspectiveCamera(
     75,
     container.clientWidth / container.clientHeight,
@@ -494,61 +492,50 @@ function setup3DViewer() {
   );
   camera.position.z = 5;
 
-  // 3. Renderer: The engine that draws the scene
   const renderer = new THREE.WebGLRenderer({ antialias: true });
   renderer.setSize(container.clientWidth, container.clientHeight);
   container.appendChild(renderer.domElement);
 
-  // --- ADD THESE LINES ---
   const controls = new THREE.OrbitControls(camera, renderer.domElement);
-  controls.enableDamping = true; // Makes the movement feel smoother
-  controls.dampingFactor = 0.05; // Controls the smoothness of the movement
-  controls.enableZoom = true; // Enable zooming with mouse wheel
-  controls.enablePan = true; // Enable panning with right mouse button
-  controls.autoRotate = false; // Disable auto-rotation so user has full control
-  controls.minDistance = 2; // Minimum zoom distance
-  controls.maxDistance = 10; // Maximum zoom distance
-  // -------------------------
+  controls.enableDamping = true;
+  controls.dampingFactor = 0.05;
+  controls.enableZoom = true;
+  controls.enablePan = true;
+  controls.autoRotate = false;
+  controls.minDistance = 2;
+  controls.maxDistance = 10;
 
-  // 4. Lighting
   const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
   scene.add(ambientLight);
   const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
   directionalLight.position.set(5, 10, 7.5);
   scene.add(directionalLight);
 
-  // 5. Model Loader
   const loader = new THREE.GLTFLoader();
   let model;
   loader.load(
-    "assets/prayer-wheel.glb", // IMPORTANT: Make sure this path is correct!
+    "assets/prayer-wheel.glb",
     function (gltf) {
       model = gltf.scene;
       scene.add(model);
     },
-    undefined, // We don't need progress updates
+    undefined,
     function (error) {
       console.error("An error happened while loading the model:", error);
     }
   );
 
-  // 6. Animation Loop: Makes the model spin
   function animate() {
     requestAnimationFrame(animate);
     if (model) {
-      model.rotation.y += 0.01; // Rotate the model slightly each frame
+      model.rotation.y += 0.01;
     }
-
-    // --- ADD THIS LINE ---
-    controls.update(); // Updates the controls every frame
-    // --------------------
-
+    controls.update();
     renderer.render(scene, camera);
   }
 
   animate();
 
-  // Handle window resizing
   window.addEventListener("resize", () => {
     camera.aspect = container.clientWidth / container.clientHeight;
     camera.updateProjectionMatrix();
@@ -559,24 +546,93 @@ function setup3DViewer() {
 // --- VIRTUAL TOUR FUNCTIONS ---
 function launchTour(monasteryId) {
   const monastery = monasteries.find((m) => m.id === monasteryId);
-  if (!monastery || !monastery.virtualTourUrl) {
+  if (!monastery) {
     alert("Virtual tour for this monastery is not available yet.");
     return;
   }
 
   const tourContainer = document.getElementById("panorama-container");
-  if (!tourContainer) {
+  const panoDiv = document.getElementById("panorama");
+  if (!tourContainer || !panoDiv) {
     console.error("Panorama container not found in DOM.");
     return;
   }
-  tourContainer.style.display = "flex";
 
-  pannellum.viewer("panorama", {
-    type: "equirectangular",
-    panorama: monastery.virtualTourUrl,
-    autoLoad: true,
-    showControls: true,
-  });
+  // Clear any previous viewer content
+  panoDiv.innerHTML = "";
+
+  // If the URL is a Google Maps link, launch Street View panorama
+  if (
+    monastery.virtualTourUrl &&
+    monastery.virtualTourUrl.includes("google.com/maps") &&
+    window.google &&
+    google.maps
+  ) {
+    tourContainer.style.display = "flex";
+    // Try to parse heading (h) and tilt (t) from the URL if present
+    const url = monastery.virtualTourUrl;
+    const headingMatch = url.match(/([0-9.]+)h/);
+    const tiltMatch = url.match(/([0-9.]+)t/);
+    const heading = headingMatch ? parseFloat(headingMatch[1]) : 0;
+    // Approximate pitch from tilt value if available (simple mapping)
+    const pitch = tiltMatch
+      ? Math.max(-90, Math.min(90, 90 - parseFloat(tiltMatch[1])))
+      : 0;
+
+    // Resolve nearest Street View panorama to avoid failures when exact coords lack coverage
+    const svService = new google.maps.StreetViewService();
+    const location = { lat: monastery.latitude, lng: monastery.longitude };
+    svService.getPanorama(
+      {
+        location,
+        radius: 5000,
+        preference: google.maps.StreetViewPreference.NEAREST,
+        source: google.maps.StreetViewSource.OUTDOOR,
+      },
+      (data, status) => {
+        if (
+          status === google.maps.StreetViewStatus.OK &&
+          data &&
+          data.location
+        ) {
+          const panoId = data.location.pano;
+          // eslint-disable-next-line no-new
+          new google.maps.StreetViewPanorama(panoDiv, {
+            pano: panoId,
+            pov: { heading, pitch },
+            zoom: 1,
+            addressControl: false,
+            linksControl: true,
+            panControl: true,
+            motionTracking: false,
+            visible: true,
+          });
+          return;
+        }
+        // Fallback: notify and open Google Maps link in a new tab for guaranteed view
+        console.warn(
+          "No nearby Street View pano found; opening Google Maps link."
+        );
+        closeTour();
+        window.open(monastery.virtualTourUrl, "_blank");
+      }
+    );
+    return;
+  }
+
+  // Fallback: use Pannellum if a 360 image URL is available
+  if (monastery.virtualTourUrl) {
+    tourContainer.style.display = "flex";
+    pannellum.viewer("panorama", {
+      type: "equirectangular",
+      panorama: monastery.virtualTourUrl,
+      autoLoad: true,
+      showControls: true,
+    });
+    return;
+  }
+
+  alert("Virtual tour for this monastery is not available yet.");
 }
 
 function closeTour() {
@@ -584,7 +640,7 @@ function closeTour() {
   if (tourContainer) tourContainer.style.display = "none";
 }
 
-// --- Google Maps 3D Viewer ---
+// --- Google Maps 3D Viewer --- (previous async pattern)
 async function initMap() {
   const { Map } = await google.maps.importLibrary("maps");
   const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
