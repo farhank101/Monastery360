@@ -23,6 +23,8 @@
 
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Pannellum CSS for 360° viewer -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css"/>
 </head>
 
 <body>
@@ -179,6 +181,12 @@
         </div>
     </section>
 
+    <!-- Panorama Container for Virtual Tours -->
+    <div id="panorama-container" class="panorama-view">
+        <div id="panorama"></div>
+        <button class="panorama-close-btn" onclick="closeTour()">×</button>
+    </div>
+
     <!-- Cultural Calendar -->
     <section id="events" class="events-section">
         <div class="container">
@@ -312,6 +320,9 @@
 
     <!-- Leaflet JS for maps -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <!-- Pannellum JS for 360° viewer -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
 
     <!-- Custom JavaScript -->
     <script src="app.js"></script>
