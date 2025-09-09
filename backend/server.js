@@ -1,4 +1,5 @@
 const express = require('express');
+require('dotenv').config();
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const path = require('path');
@@ -33,6 +34,14 @@ try {
 }
 
 // Routes
+
+// Public config endpoint to expose safe client config
+app.get('/api/config', (req, res) => {
+  res.json({
+    googleMapsApiKey: process.env.GOOGLE_MAPS_API_KEY || null,
+    googleMapsMapId: process.env.GOOGLE_MAPS_MAP_ID || 'YOUR_MAP_ID_HERE'
+  });
+});
 
 // Get all monasteries
 app.get('/api/monasteries', (req, res) => {

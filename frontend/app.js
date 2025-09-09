@@ -402,7 +402,7 @@ function showMonasteryDetail(monasteryId) {
                     ${monastery.highlights
                       .map(
                         (h) =>
-                          `<li><i class="fas fa-star text-warning me-2"></i>${h}</li>`
+                          `<li><i class=\"fas fa-star text-warning me-2\"></i>${h}</li>`
                       )
                       .join("")}
         </ul>
@@ -413,7 +413,7 @@ function showMonasteryDetail(monasteryId) {
                     ${monastery.nearbyAttractions
                       .map(
                         (a) =>
-                          `<li><i class="fas fa-map-marker-alt text-primary me-2"></i>${a}</li>`
+                          `<li><i class=\"fas fa-map-marker-alt text-primary me-2\"></i>${a}</li>`
                       )
                       .join("")}
         </ul>
@@ -561,6 +561,18 @@ function launchTour(monasteryId) {
   // Clear any previous viewer content
   panoDiv.innerHTML = "";
 
+  // If the URL is a Google Maps embed link, render it in an iframe inside the modal
+  if (
+    monastery.virtualTourUrl &&
+    monastery.virtualTourUrl.includes("/maps/embed?")
+  ) {
+    tourContainer.style.display = "flex";
+    panoDiv.innerHTML = `
+      <iframe src="${monastery.virtualTourUrl}" width="100%" height="100%" style="border:0;" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    `;
+    return;
+  }
+
   // If the URL is a Google Maps link, launch Street View panorama
   if (
     monastery.virtualTourUrl &&
@@ -578,6 +590,9 @@ function launchTour(monasteryId) {
     const pitch = tiltMatch
       ? Math.max(-90, Math.min(90, 90 - parseFloat(tiltMatch[1])))
       : 0;
+    // Try to extract a panoId directly from the URL (pattern: `!1s<id>!2e`)
+    const panoIdMatch = url.match(/!1s([A-Za-z0-9_-]+)!2e/);
+    const panoIdFromUrl = panoIdMatch ? panoIdMatch[1] : null;
 
     // Resolve nearest Street View panorama to avoid failures when exact coords lack coverage
     const svService = new google.maps.StreetViewService();
@@ -585,9 +600,9 @@ function launchTour(monasteryId) {
     svService.getPanorama(
       {
         location,
-        radius: 5000,
+        radius: 20000,
         preference: google.maps.StreetViewPreference.NEAREST,
-        source: google.maps.StreetViewSource.OUTDOOR,
+        source: google.maps.StreetViewSource.DEFAULT,
       },
       (data, status) => {
         if (
@@ -609,12 +624,31 @@ function launchTour(monasteryId) {
           });
           return;
         }
-        // Fallback: notify and open Google Maps link in a new tab for guaranteed view
-        console.warn(
-          "No nearby Street View pano found; opening Google Maps link."
-        );
-        closeTour();
-        window.open(monastery.virtualTourUrl, "_blank");
+        // Fallback: if we have a panoId in the URL, try it directly
+        if (panoIdFromUrl) {
+          try {
+            // eslint-disable-next-line no-new
+            new google.maps.StreetViewPanorama(panoDiv, {
+              pano: panoIdFromUrl,
+              pov: { heading, pitch },
+              zoom: 1,
+              addressControl: false,
+              linksControl: true,
+              panControl: true,
+              motionTracking: false,
+              visible: true,
+            });
+            return;
+          } catch (e) {
+            console.warn(
+              "Failed to initialize Street View with panoId from URL",
+              e
+            );
+          }
+        }
+        // Final fallback: show message in modal rather than opening a new tab
+        panoDiv.innerHTML =
+          '<div style="color:white;text-align:center;padding:20px;">Street View imagery is not available here right now.</div>';
       }
     );
     return;
@@ -652,7 +686,9 @@ async function initMap() {
     zoom: 17,
     tilt: 65,
     heading: 90,
-    mapId: "YOUR_MAP_ID_HERE",
+    mapId:
+      (window.__APP_CONFIG__ && window.__APP_CONFIG__.googleMapsMapId) ||
+      "YOUR_MAP_ID_HERE",
     mapTypeId: "satellite",
   });
 
