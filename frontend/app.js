@@ -120,51 +120,19 @@ function renderMonasteries(filteredMonasteries = null) {
     .map(
       (monastery) => `
         <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card h-100 shadow-sm" onclick="showMonasteryDetail(${
-              monastery.id
-            })" style="cursor: pointer; transition: transform 0.3s;">
-                <div class="card-img-top position-relative" style="height: 200px; background: linear-gradient(45deg, #ddd, #bbb);">
-                    ${
-                      monastery.audioGuideAvailable
-                        ? '<span class="badge bg-warning position-absolute top-0 end-0 m-2">Audio Guide</span>'
-                        : ""
-                    }
-                    <img src="${
-                      monastery.images && monastery.images[0]
-                        ? monastery.images[0]
-                        : ""
-                    }" alt="${
-        monastery.name
-      }" style="width: 100%; height: 100%; object-fit: cover;" />
-            </div>
+            <div class="card h-100 shadow-sm" style="cursor: pointer;" onclick="showMonasteryDetail(${monastery.id})">
+                <img src="${monastery.images[0]}" class="card-img-top" alt="${monastery.name}" style="height: 200px; object-fit: cover;">
                 <div class="card-body d-flex flex-column">
                     <h5 class="card-title text-primary">${monastery.name}</h5>
-                    <p class="card-text text-muted small">
-                        <i class="fas fa-map-marker-alt me-1"></i> ${
-                          monastery.region
-                        } • ${monastery.altitude}
+                    <p class="card-text text-muted small mb-2">
+                        <i class="fas fa-map-marker-alt me-1"></i> ${monastery.region}
                     </p>
-                    <p class="card-text flex-grow-1">
-                    ${monastery.description.substring(0, 150)}...
-                </p>
+                    <p class="card-text flex-grow-1">${monastery.description.substring(0, 100)}...</p>
                     <div class="mt-auto">
-                        <div class="d-flex flex-wrap gap-1">
-                            ${
-                              monastery.virtualTourUrl
-                                ? '<span class="badge bg-info"><i class="fas fa-vr-cardboard me-1"></i> Virtual Tour</span>'
-                                : ""
-                            }
-                            <span class="badge bg-secondary"><i class="fas fa-clock me-1"></i> ${
-                              monastery.visitingHours
-                            }</span>
+                        <div class="d-flex flex-wrap gap-2">
+                            ${monastery.virtualTourUrl ? `<span class="badge bg-info"><i class="fas fa-vr-cardboard me-1"></i> Virtual Tour</span>` : ''}
+                            ${monastery.audioGuideAvailable ? `<span class="badge bg-warning text-dark"><i class="fas fa-headphones me-1"></i> Audio Guide</span>` : ''}
                         </div>
-                        ${
-                          monastery.virtualTourUrl
-                            ? `<button class="btn btn-primary mt-3" onclick="launchTour(${monastery.id})">
-                                <i class="fas fa-vr-cardboard"></i> Start Virtual Tour
-                              </button>`
-                            : ""
-                        }
                     </div>
                 </div>
             </div>
